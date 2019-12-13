@@ -1,0 +1,7 @@
+{
+    "string": "O campo :field deve ser uma string.",
+    "required": "Você deve prover o campo :field.",
+    "between.string": "O campo deve :field possuir no minimo :min e no máximo :max caracteres.",
+    "uuid": "Campo :field deve ser do tipo uuid.",
+    "regex": "Campo :field deve estar no formato valido."
+}
