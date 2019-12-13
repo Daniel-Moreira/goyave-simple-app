@@ -55,27 +55,10 @@ $ curl https://raw.githubusercontent.com/System-Glitch/goyave/master/install.sh 
 
 Run `go run my-project` in your project's directory to start the server, then try to request the `hello` route.
 ```
-$ curl http://localhost:8080/hello
+$ curl -H 'Accept-Language: pt-BR;q=0.9, en;q=0.8' -H "Content-Type: application/json" http://localhost:3000/user -d '{"name": "teste", "email": "teste@teste.com", "phone": "+5511999999999", "uid": "f8dbea72-1a2f-436c-ac4b-3b5665f4b8da"}'
 Hi!
 ```
 
-### Hello world from scratch
-
-The example below shows a basic `Hello world` application using Goyave.
-
-``` go
-import "github.com/System-Glitch/goyave/v2"
-
-func registerRoutes(router *goyave.Router) {
-	router.Route("GET", "/hello", func(response *goyave.Response, request *goyave.Request) {
-	    response.String(http.StatusOK, "Hello world!")
-    }, nil)
-}
-
-func main() {
-	goyave.Start(registerRoutes)
-}
-```
 
 ## Learning Goyave
 
@@ -87,26 +70,3 @@ The Goyave framework has an extensive documentation covering in-depth subjects a
 
 - Go 1.13+
 - Go modules
-
-## Contributing
-
-Thank you for considering contributing to the Goyave framework! You can find the contribution guide in the [documentation](https://system-glitch.github.io/goyave/guide/contribution-guide.html).
-
-I have many ideas for the future of Goyave. I would be infinitely grateful to whoever want to support me and let me continue working on Goyave and making it better and better.
-
-You can support also me on Patreon:
-
-<a href="https://www.patreon.com/bePatron?u=25997573">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-### Contributors
-
-A big "Thank you" to the Goyave contributors:
-
-- [Kuinox](https://github.com/Kuinox) (Powershell install script)
-- [Alexandre GV.](https://github.com/alexandregv) (Install script MacOS compatibility)
-
-## License
-
-The Goyave framework is MIT Licensed. Copyright © 2019 Jérémy LAMBERT (SystemGlitch)
